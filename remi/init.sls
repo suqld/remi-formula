@@ -31,6 +31,7 @@ include:
 
 install_remi_rpm:
   pkg.installed:
+    - pkg_verify: True
     - sources:
       - remi-release: {{ salt['pillar.get']('remi:rpm', pkg.rpm) }}
     - requires:
